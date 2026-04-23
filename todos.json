@@ -1,26 +1,14 @@
 [
   {
-    "id": "d9947680-327e-471d-8c13-9447490f5cf8",
-    "title": "test",
-    "deadline": "2026-04-12",
-    "completed": true
+    "id": "055e2a47-7107-4335-bb42-502b5f3bab95",
+    "title": "Math",
+    "deadline": "2026-04-23",
+    "completed": false
   },
   {
-    "id": "2d6c659e-ece1-4db5-92cb-81c6189e95dd",
-    "title": "test 2",
-    "deadline": "2026-04-12",
-    "completed": true
-  },
-  {
-    "id": "585f870d-897f-48be-8623-f86927a5b106",
-    "title": "Math exam",
-    "deadline": "2026-04-12",
-    "completed": true
-  },
-  {
-    "id": "4402c23c-5c40-4120-8388-6aa6559cc2da",
-    "title": "French test",
-    "deadline": "2026-04-12",
+    "id": "80aa3865-9d62-43bb-bec6-cbe401c97503",
+    "title": "Coding event",
+    "deadline": "2026-04-25",
     "completed": false
   }
 ]

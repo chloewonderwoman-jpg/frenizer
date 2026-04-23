@@ -9,7 +9,212 @@ from mascot import show_fren
 
 st.set_page_config(page_title="Frenizer", page_icon="🤍")
 st.title("Frenizer")
+st.markdown("""
+<style>
 
+.stApp {
+
+    background-color: #0E1117;
+
+    color: white;
+
+}
+
+.block-container {
+
+    padding-top: 2rem;
+
+    padding-left: 4rem;
+
+    padding-right: 4rem;
+
+    max-width: 1400px;
+
+}
+
+h1 {
+
+    font-size: 60px !important;
+
+    font-weight: 800 !important;
+
+}
+
+.stButton>button {
+
+    background: linear-gradient(90deg,#ff4b4b,#ff7b00);
+
+    color: white;
+
+    border-radius: 12px;
+
+    border: none;
+
+    font-weight: bold;
+
+}
+</style>
+
+""", unsafe_allow_html=True)
+st.markdown("""
+
+            <style>
+
+/* App Background */
+
+.stApp {
+
+    background: linear-gradient(135deg, #0E1117, #161B22);
+
+    color: white;
+
+}
+
+/* Main Content Width + Padding */
+
+.block-container {
+
+    padding-top: 2rem;
+
+    padding-left: 4rem;
+
+    padding-right: 4rem;
+
+    max-width: 1300px;
+
+}
+
+/* Titles */
+
+h1 {
+
+    font-size: 56px !important;
+
+    font-weight: 800 !important;
+
+    color: white !important;
+
+}
+
+h2, h3 {
+
+    color: white !important;
+
+}
+
+/* Cards / Containers */
+
+div[data-testid="stVerticalBlock"] > div {
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    margin-bottom: 14px;
+
+}
+
+/* Input Fields */
+
+input, textarea {
+
+    border-radius: 14px !important;
+
+    background: rgba(255,255,255,0.05) !important;
+
+    color: white !important;
+
+}
+
+/* Buttons */
+
+.stButton button {
+
+    background: linear-gradient(90deg,#ff5c5c,#ff8a5c);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 10px 20px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+.stButton button:hover {
+
+    transform: scale(1.04);
+
+    box-shadow: 0 0 18px rgba(255,92,92,0.4);
+
+}
+
+/* Tabs */
+
+.stTabs [data-baseweb="tab-list"] {
+
+    gap: 30px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.stTabs [data-baseweb="tab"] {
+
+    color: #aaaaaa;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+.stTabs [aria-selected="true"] {
+
+    color: white !important;
+
+    border-bottom: 3px solid #ff5c5c;
+
+}
+
+/* Selectbox */
+
+div[data-baseweb="select"] {
+
+    background: rgba(255,255,255,0.05);
+
+    border-radius: 14px;
+
+}
+
+/* Slider */
+
+.stSlider {
+
+    padding-top: 10px;
+
+}
+
+/* Checkbox text */
+
+label {
+
+    color: white !important;
+
+}
+</style>
+
+""", unsafe_allow_html=True)
+ 
 def get_countdown(deadline):
     deadline_date = datetime.fromisoformat(deadline).date()
     today = date.today()
@@ -264,3 +469,29 @@ with tab2:
                 st.session_state.timer_total_seconds = total_seconds
                 st.session_state.timer_remaining_on_pause = None
                 st.rerun()
+st.divider()
+
+st.subheader("📅 Weekly Planner")
+
+from datetime import datetime
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+cols = st.columns(7)
+
+for i, day in enumerate(days):
+
+    with cols[i]:
+
+        st.markdown(f"### {day}")
+
+        for todo in todos:
+
+            deadline = datetime.fromisoformat(todo["deadline"])
+
+            todo_day = deadline.strftime("%a")
+
+            if todo_day == day:
+
+                st.write("•", todo["title"])
+
