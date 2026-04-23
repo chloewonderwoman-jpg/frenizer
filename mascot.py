@@ -2,26 +2,26 @@ import streamlit.components.v1 as components
 
 MESSAGES = {
     "idle": [
-        "Salut, je suis Fren !<br>Dis-moi quand tu veux réviser.",
-        "Prêt quand tu l'es !<br>Sélectionne une tâche.",
+        "Hey, I'm Fren!<br>Tell me when you're ready to study.",
+        "Ready when you are!<br>Select a task to get started.",
     ],
     "timer": [
-        "Focus total !<br>La pause arrive bientôt 🔥",
-        "Téléphone en mode silencieux,<br>tu vas gérer cette session.",
-        "Reste concentré·e,<br>tu es presque arrivé·e !",
+        "Stay focused!<br>Break time is coming soon 🔥",
+        "Phone on silent,<br>you've got this session!",
+        "Keep it up,<br>you're almost there!",
     ],
     "paused": [
-        "Petite pause méritée.<br>Reprends quand tu es prêt·e !",
-        "Souffle un peu,<br>Fren t'attend ici.",
+        "Well deserved break!<br>Resume whenever you're ready.",
+        "Take a breath,<br>Fren is waiting for you.",
     ],
     "win": [
-        "Objectif atteint !<br>Frenizer est super fier de toi 🏆",
-        "Tu l'as eu !<br>Mérite-toi une vraie pause.",
-        "Incroyable !<br>Continue sur cette lancée 🌟",
+        "Goal reached!<br>Frenizer is so proud of you 🏆",
+        "You nailed it!<br>Go enjoy a real break.",
+        "Incredible!<br>Keep up that momentum 🌟",
     ],
     "cheer": [
-        "Tu assures vraiment !<br>Continue comme ça 💜",
-        "Allez, on garde le rythme !<br>Tu es sur la bonne voie.",
+        "You're doing amazing!<br>Keep it up 💜",
+        "Let's keep the rhythm!<br>You're on the right track.",
     ],
 }
 
