@@ -7,7 +7,7 @@ import time
 from mascot import show_fren
 # ─────────────────────────────────────────────────────────
 
-st.set_page_config(page_title="Frenizer", page_icon="🤍")
+st.set_page_config(page_title="Frenizer", page_icon="🤍", layout="wide")
 st.title("Frenizer")
 st.markdown("""
 <style>
@@ -393,7 +393,7 @@ with tab2:
         st.write(f"Task: {st.session_state.timer_task_title}")
 
         # ── FREN : layout côte-à-côte avec le timer circle ────
-        fren_col, timer_col = st.columns([1, 1])
+        fren_col, timer_col = st.columns([1, 2])
         with fren_col:
             if st.session_state.timer_paused:
                 show_fren("paused", task_id=st.session_state.timer_task_id)  # 😌 paused
@@ -468,6 +468,7 @@ with tab2:
                 st.session_state.timer_end_time = time.time() + total_seconds
                 st.session_state.timer_total_seconds = total_seconds
                 st.session_state.timer_remaining_on_pause = None
+<<<<<<< HEAD
                 st.rerun()
 st.divider()
 
@@ -495,3 +496,6 @@ for i, day in enumerate(days):
 
                 st.write("•", todo["title"])
 
+=======
+                st.rerun()
+>>>>>>> 99dff779cb509e13e9b7f981b63994cacd613cb0

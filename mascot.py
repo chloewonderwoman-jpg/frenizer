@@ -2,26 +2,26 @@ import streamlit.components.v1 as components
 
 MESSAGES = {
     "idle": [
-        "Salut, je suis Fren !<br>Dis-moi quand tu veux réviser.",
-        "Prêt quand tu l'es !<br>Sélectionne une tâche.",
+        "Hey, I'm Fren!<br>Tell me when you're ready to study.",
+        "Ready when you are!<br>Select a task to get started.",
     ],
     "timer": [
-        "Focus total !<br>La pause arrive bientôt 🔥",
-        "Téléphone en mode silencieux,<br>tu vas gérer cette session.",
-        "Reste concentré·e,<br>tu es presque arrivé·e !",
+        "Stay focused!<br>Break time is coming soon 🔥",
+        "Phone on silent,<br>you've got this session!",
+        "Keep it up,<br>you're almost there!",
     ],
     "paused": [
-        "Petite pause méritée.<br>Reprends quand tu es prêt·e !",
-        "Souffle un peu,<br>Fren t'attend ici.",
+        "Well deserved break!<br>Resume whenever you're ready.",
+        "Take a breath,<br>Fren is waiting for you.",
     ],
     "win": [
-        "Objectif atteint !<br>Frenizer est super fier de toi 🏆",
-        "Tu l'as eu !<br>Mérite-toi une vraie pause.",
-        "Incroyable !<br>Continue sur cette lancée 🌟",
+        "Goal reached!<br>Frenizer is so proud of you 🏆",
+        "You nailed it!<br>Go enjoy a real break.",
+        "Incredible!<br>Keep up that momentum 🌟",
     ],
     "cheer": [
-        "Tu assures vraiment !<br>Continue comme ça 💜",
-        "Allez, on garde le rythme !<br>Tu es sur la bonne voie.",
+        "You're doing amazing!<br>Keep it up 💜",
+        "Let's keep the rhythm!<br>You're on the right track.",
     ],
 }
 
@@ -65,10 +65,10 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
         eyes = f"""
         <ellipse cx="{ex-18}" cy="{ey}" rx="11" ry="7" fill="{eye_col}"/>
         <ellipse cx="{ex+18}" cy="{ey}" rx="11" ry="7" fill="{eye_col}"/>
-        <rect x="{ex-29}" y="{ey-9}" width="22" height="8" rx="3" fill="{fill}"/>
-        <rect x="{ex+7}" y="{ey-9}" width="22" height="8" rx="3" fill="{fill}"/>
         <ellipse cx="{ex-16}" cy="{ey-1}" rx="4" ry="3" fill="white" opacity=".7"/>
-        <ellipse cx="{ex+20}" cy="{ey-1}" rx="4" ry="3" fill="white" opacity=".7"/>"""
+        <ellipse cx="{ex+20}" cy="{ey-1}" rx="4" ry="3" fill="white" opacity=".7"/>
+        <rect x="{ex-29}" y="{ey-9}" width="22" height="8" rx="3" fill="{fill}"/>
+        <rect x="{ex+7}" y="{ey-9}" width="22" height="8" rx="3" fill="{fill}"/>"""
     elif state == "timer":
         eyes = f"""
         <path d="M {ex-30} {ey-8} Q {ex-18} {ey-15} {ex-6} {ey-8}" fill="none" stroke="{eye_col}" stroke-width="2"/>
@@ -109,7 +109,8 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
     if state == "idle":
         extras = f'<text x="{ex+62}" y="120" font-family="Arial" font-size="12" fill="{stroke}">z</text><text x="{ex+72}" y="106" font-family="Arial" font-size="14" fill="{stroke}">z</text><text x="{ex+84}" y="90" font-family="Arial" font-size="16" fill="{stroke}">Z</text>'
     elif state == "timer":
-        extras = f'<path d="M {ex+64} 124 Q {ex+68} 134 {ex+62} 140 Q {ex+56} 146 {ex+60} 133 Z" fill="#90d0f8" opacity=".8" style="animation:sweat 1.6s ease-in-out infinite"/>'
+        sx = ex + 38
+        extras = f'<path d="M {sx} 120 Q {sx+5} 120 {sx+5} 128 Q {sx+5} 137 {sx} 138 Q {sx-5} 137 {sx-5} 128 Q {sx-5} 120 {sx} 120 Z" fill="#00aaff" opacity="1" style="animation:sweat 2.5s ease-in-out infinite"/>'
     if state in ("win", "cheer"):
         extras += f'<text x="{ex-95}" y="102" font-family="Arial" font-size="17" fill="#f8c020" style="animation:pop .8s infinite 0s">★</text><text x="{ex+75}" y="97" font-family="Arial" font-size="14" fill="#c088f0" style="animation:pop .8s infinite .3s">★</text>'
     if state in ("win", "cheer", "paused"):
@@ -117,27 +118,19 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
     if state == "win":
         extras += f'<ellipse cx="{ex}" cy="102" rx="16" ry="12" fill="#f8d020" stroke="#b09010" stroke-width=".6"/><rect x="{ex-8}" y="102" width="16" height="12" rx="1" fill="#f8d020" stroke="#b09010" stroke-width=".6"/><rect x="{ex-3}" y="114" width="6" height="8" rx="1" fill="#b09010"/><rect x="{ex-9}" y="121" width="18" height="4" rx="1" fill="#f8d020"/>'
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300"
-     style="width:100%;max-width:240px;display:block;margin:0 auto">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300"
+     style="width:100%;max-width:480px;display:block;margin:0 auto">
   <defs>
     <style>
       @keyframes float {{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-8px)}}}}
       @keyframes floatFast {{0%,100%{{transform:translateY(0) rotate(-3deg)}}50%{{transform:translateY(-12px) rotate(3deg)}}}}
       @keyframes wiggle {{0%,100%{{transform:rotate(0)}}25%{{transform:rotate(-8deg)}}75%{{transform:rotate(8deg)}}}}
       @keyframes pop {{0%{{opacity:0;transform:scale(0)}}50%{{opacity:1;transform:scale(1.3)}}100%{{opacity:.8;transform:scale(1)}}}}
-      @keyframes sweat {{0%,100%{{transform:translateY(0);opacity:.8}}50%{{transform:translateY(6px);opacity:.3}}}}
+      @keyframes sweat {{0%,100%{{transform:translateY(0);opacity:.9}}50%{{transform:translateY(3px);opacity:.5}}}}
     </style>
   </defs>
 
-  <!-- Speech bubble -->
-  <rect x="172" y="12" width="136" height="62" rx="11" fill="white" stroke="{bc}" stroke-width="1"/>
-  <polygon points="176,62 158,74 180,74" fill="white" stroke="{bc}" stroke-width="1"/>
-  <foreignObject x="178" y="17" width="124" height="56">
-    <div xmlns="http://www.w3.org/1999/xhtml"
-         style="font-family:sans-serif;font-size:11px;color:#222;line-height:1.55">{msg}</div>
-  </foreignObject>
-
-  <!-- Fren animated group -->
+  <!-- Fren animated group (drawn first, behind bubble) -->
   <g style="animation:{anim}">
     <ellipse cx="{ex-52}" cy="136" rx="12" ry="16" fill="{fill}" stroke="{stroke}" stroke-width="1"/>
     <ellipse cx="{ex+52}" cy="136" rx="12" ry="16" fill="{fill}" stroke="{stroke}" stroke-width="1"/>
@@ -147,6 +140,14 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
     {mouth}
     {extras}
   </g>
+
+  <!-- Speech bubble (drawn after = on top of arms) -->
+  <polygon points="260,135 238,145 262,150" fill="white" stroke="{bc}" stroke-width="1"/>
+  <rect x="260" y="100" width="190" height="80" rx="11" fill="white" stroke="{bc}" stroke-width="1"/>
+  <foreignObject x="266" y="106" width="178" height="74">
+    <div xmlns="http://www.w3.org/1999/xhtml"
+         style="font-family:sans-serif;font-size:14px;color:#222;line-height:1.55">{msg}</div>
+  </foreignObject>
 
   <!-- Name tag -->
   <rect x="124" y="258" width="72" height="20" rx="10" fill="#1a1a2e"/>

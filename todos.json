@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "id": "055e2a47-7107-4335-bb42-502b5f3bab95",
     "title": "Math",
     "deadline": "2026-04-23",
@@ -9,6 +10,11 @@
     "id": "80aa3865-9d62-43bb-bec6-cbe401c97503",
     "title": "Coding event",
     "deadline": "2026-04-25",
+=======
+    "id": "cc6aa4cb-9e3b-4fa0-b377-0e3d299dfb46",
+    "title": "test",
+    "deadline": "2026-04-17",
+>>>>>>> 99dff779cb509e13e9b7f981b63994cacd613cb0
     "completed": false
   }
 ]
