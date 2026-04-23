@@ -7,7 +7,7 @@ import time
 from mascot import show_fren
 # ─────────────────────────────────────────────────────────
 
-st.set_page_config(page_title="Frenizer", page_icon="🤍")
+st.set_page_config(page_title="Frenizer", page_icon="🤍", layout="wide")
 st.title("Frenizer")
 
 def get_countdown(deadline):
@@ -188,7 +188,7 @@ with tab2:
         st.write(f"Task: {st.session_state.timer_task_title}")
 
         # ── FREN : layout côte-à-côte avec le timer circle ────
-        fren_col, timer_col = st.columns([1, 1])
+        fren_col, timer_col = st.columns([1, 2])
         with fren_col:
             if st.session_state.timer_paused:
                 show_fren("paused", task_id=st.session_state.timer_task_id)  # 😌 paused
