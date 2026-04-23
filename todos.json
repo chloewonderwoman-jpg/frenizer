@@ -1,20 +1,26 @@
 [
   {
-<<<<<<< HEAD
-    "id": "055e2a47-7107-4335-bb42-502b5f3bab95",
-    "title": "Math",
+    "id": "7a80cd66-80e8-4da0-9a1e-a0f45449cb7c",
+    "title": "test",
     "deadline": "2026-04-23",
     "completed": false
   },
   {
-    "id": "80aa3865-9d62-43bb-bec6-cbe401c97503",
-    "title": "Coding event",
-    "deadline": "2026-04-25",
-=======
-    "id": "cc6aa4cb-9e3b-4fa0-b377-0e3d299dfb46",
+    "id": "2480a860-40ef-4cf7-88f0-e254dcf94575",
     "title": "test",
-    "deadline": "2026-04-17",
->>>>>>> 99dff779cb509e13e9b7f981b63994cacd613cb0
+    "deadline": "2026-04-23",
+    "completed": false
+  },
+  {
+    "id": "884236ee-11cf-47f4-a0dc-2e716e5d661d",
+    "title": "test",
+    "deadline": "2026-04-23",
+    "completed": false
+  },
+  {
+    "id": "feff46a7-afb2-4386-902c-caeebc28d2f9",
+    "title": "test",
+    "deadline": "2026-04-23",
     "completed": false
   }
 ]

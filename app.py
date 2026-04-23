@@ -468,7 +468,7 @@ with tab2:
                 st.session_state.timer_end_time = time.time() + total_seconds
                 st.session_state.timer_total_seconds = total_seconds
                 st.session_state.timer_remaining_on_pause = None
-<<<<<<< HEAD
+ 
                 st.rerun()
 st.divider()
 
@@ -496,6 +496,5 @@ for i, day in enumerate(days):
 
                 st.write("•", todo["title"])
 
-=======
                 st.rerun()
->>>>>>> 99dff779cb509e13e9b7f981b63994cacd613cb0
+
