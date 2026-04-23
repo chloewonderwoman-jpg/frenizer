@@ -109,7 +109,8 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
     if state == "idle":
         extras = f'<text x="{ex+62}" y="120" font-family="Arial" font-size="12" fill="{stroke}">z</text><text x="{ex+72}" y="106" font-family="Arial" font-size="14" fill="{stroke}">z</text><text x="{ex+84}" y="90" font-family="Arial" font-size="16" fill="{stroke}">Z</text>'
     elif state == "timer":
-        extras = f'<path d="M {ex+64} 124 Q {ex+68} 134 {ex+62} 140 Q {ex+56} 146 {ex+60} 133 Z" fill="#90d0f8" opacity=".8" style="animation:sweat 1.6s ease-in-out infinite"/>'
+        sx = ex + 38
+        extras = f'<path d="M {sx} 116 Q {sx+6} 124 {sx+6} 131 Q {sx+6} 140 {sx} 140 Q {sx-6} 140 {sx-6} 131 Q {sx-6} 124 {sx} 116 Z" fill="#00aaff" opacity="1" style="animation:sweat 2.5s ease-in-out infinite"/>'
     if state in ("win", "cheer"):
         extras += f'<text x="{ex-95}" y="102" font-family="Arial" font-size="17" fill="#f8c020" style="animation:pop .8s infinite 0s">★</text><text x="{ex+75}" y="97" font-family="Arial" font-size="14" fill="#c088f0" style="animation:pop .8s infinite .3s">★</text>'
     if state in ("win", "cheer", "paused"):
@@ -125,7 +126,7 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
       @keyframes floatFast {{0%,100%{{transform:translateY(0) rotate(-3deg)}}50%{{transform:translateY(-12px) rotate(3deg)}}}}
       @keyframes wiggle {{0%,100%{{transform:rotate(0)}}25%{{transform:rotate(-8deg)}}75%{{transform:rotate(8deg)}}}}
       @keyframes pop {{0%{{opacity:0;transform:scale(0)}}50%{{opacity:1;transform:scale(1.3)}}100%{{opacity:.8;transform:scale(1)}}}}
-      @keyframes sweat {{0%,100%{{transform:translateY(0);opacity:.8}}50%{{transform:translateY(6px);opacity:.3}}}}
+      @keyframes sweat {{0%,100%{{transform:translateY(0);opacity:.9}}50%{{transform:translateY(3px);opacity:.5}}}}
     </style>
   </defs>
 
