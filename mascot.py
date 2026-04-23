@@ -117,8 +117,7 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
     if state == "win":
         extras += f'<ellipse cx="{ex}" cy="102" rx="16" ry="12" fill="#f8d020" stroke="#b09010" stroke-width=".6"/><rect x="{ex-8}" y="102" width="16" height="12" rx="1" fill="#f8d020" stroke="#b09010" stroke-width=".6"/><rect x="{ex-3}" y="114" width="6" height="8" rx="1" fill="#b09010"/><rect x="{ex-9}" y="121" width="18" height="4" rx="1" fill="#f8d020"/>'
 
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300"
-     style="width:100%;max-width:240px;display:block;margin:0 auto">
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" style="width:100%;max-width:320px;display:block;margin:0 auto"
   <defs>
     <style>
       @keyframes float {{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-8px)}}}}
@@ -130,9 +129,9 @@ def show_fren(state: str = "idle", task_id=None, height: int = 320):
   </defs>
 
   <!-- Speech bubble -->
-  <rect x="172" y="12" width="136" height="62" rx="11" fill="white" stroke="{bc}" stroke-width="1"/>
-  <polygon points="176,62 158,74 180,74" fill="white" stroke="{bc}" stroke-width="1"/>
-  <foreignObject x="178" y="17" width="124" height="56">
+  <rect x="245" y="145" width="160" height="62" rx="11" fill="white" stroke="{bc}" stroke-width="1"/>
+  <polygon points="245,168 228,175 247,178" fill="white" stroke="{bc}" stroke-width="1"/>
+  <foreignObject x="251" y="151" width="148" height="56">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="font-family:sans-serif;font-size:11px;color:#222;line-height:1.55">{msg}</div>
   </foreignObject>
