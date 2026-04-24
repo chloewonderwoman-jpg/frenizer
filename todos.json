@@ -1,14 +1,44 @@
 [
   {
-    "id": "feff46a7-afb2-4386-902c-caeebc28d2f9",
-    "title": "test",
-    "deadline": "2026-04-23",
+    "id": "4296ec9d-d6c3-404b-828f-c485c504fe4a",
+    "title": "Mathe home work",
+    "deadline": "2026-04-28",
     "completed": true
   },
   {
-    "id": "048dbe30-9363-45c0-ac96-f24e0ac5a340",
-    "title": "test 1",
-    "deadline": "2026-04-26",
+    "id": "c6d7f4cf-636b-4a01-89d8-c954cf95159d",
+    "title": "LTS course  16.15-17.50",
+    "deadline": "2026-04-24",
+    "completed": false
+  },
+  {
+    "id": "6f2effc9-4ecb-4a61-bb72-5a5b61deed52",
+    "title": "English home work",
+    "deadline": "2026-04-20",
+    "completed": false
+  },
+  {
+    "id": "4e1bad81-2d14-49f3-a846-9b25410b3b42",
+    "title": "Practice 18.00-19.30",
+    "deadline": "2026-04-20",
+    "completed": false
+  },
+  {
+    "id": "0a6bb344-970c-4ac9-890f-557664f01116",
+    "title": "German book reading",
+    "deadline": "2026-04-23",
+    "completed": false
+  },
+  {
+    "id": "50d8e3fb-4feb-4c5c-8417-04cb7e424c90",
+    "title": "home game 10.00",
+    "deadline": "2026-04-25",
+    "completed": false
+  },
+  {
+    "id": "2d74fb67-c3af-4536-8f4c-7a99ea69a45d",
+    "title": "LTS 13.30",
+    "deadline": "2026-04-25",
     "completed": false
   }
 ]

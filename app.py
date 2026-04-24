@@ -309,7 +309,7 @@ with tab1:
     if active:
         st.subheader("Todos")
         for todo in active:
-            col1, col2, col3 = st.columns([6, 3, 1])
+            col1, col2, col3 = st.columns([6, 3, 2])
 
             with col1:
                 checked = st.checkbox(
@@ -334,7 +334,7 @@ with tab1:
     if completed:
         st.subheader("Completed")
         for todo in completed:
-            col1, col2, col3 = st.columns([6, 3, 1])
+            col1, col2, col3 = st.columns([6, 3, 2])
 
             with col1:
                 st.markdown(f"<span style='color: gray'>{todo['title']}</span>", unsafe_allow_html=True)
