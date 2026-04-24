@@ -496,5 +496,5 @@ for i, day in enumerate(days):
 
                 st.write("•", todo["title"])
 
-                st.rerun()
+                #st.rerun()
 
